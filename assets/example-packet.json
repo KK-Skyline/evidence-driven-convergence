@@ -1,0 +1,16 @@
+{
+  "id": "development-cache-example",
+  "contract": "Prices depend on SKU and tier. Each pair is fetched at most once per instance. quote and bundle share this behavior. No changing catalogs or concurrency.",
+  "plan": "Clear the cache in quote before pricing, then retest the reported retail-to-member quote.",
+  "plan_refs": [
+    "source"
+  ],
+  "evidence": [
+    {
+      "id": "source",
+      "origin": "Synthetic development example, not live repository evidence",
+      "text": "def _unit(sku, tier):\n    key = sku\n    if key not in cache:\n        cache[key] = provider(sku, tier)\n    return cache[key]\n# Both quote and bundle call _unit.",
+      "sha256": "a893e7426a40caf5cd901d109f8cfc71c74084b7f9807984a56dc76a280a8193"
+    }
+  ]
+}

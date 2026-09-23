@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-driven Convergence</title>
+  <desc id="desc">Review the repair, trace the cause, verify the closure.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11131e"/>
+      <stop offset="0.56" stop-color="#1a1b2b"/>
+      <stop offset="1" stop-color="#321923"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ec8c9b"/>
+      <stop offset="1" stop-color="#a45983"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#background)"/>
+  <circle cx="1138" cy="29" r="144" fill="#a4436a" opacity=".19" filter="url(#glow)"/>
+  <circle cx="87" cy="374" r="135" fill="#6d426e" opacity=".15" filter="url(#glow)"/>
+  <path d="M64 62h1072M64 295h1072" stroke="#b5a8bd" stroke-opacity=".13"/>
+  <path d="M64 62v233M1136 62v233" stroke="#b5a8bd" stroke-opacity=".09"/>
+  <circle cx="102" cy="101" r="4" fill="#f0a0ac"/><path d="M117 101h103" stroke="url(#line)" stroke-width="2"/>
+  <text x="64" y="148" fill="#eedfe6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" letter-spacing="4">AGENT REVIEW SKILL</text>
+  <text x="62" y="211" fill="#fff9fb" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="50" font-weight="700">Evidence-driven</text>
+  <text x="62" y="269" fill="#f2a4b2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="50" font-weight="700">Convergence</text>
+  <text x="64" y="328" fill="#cfc6d4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">Trace the cause. Challenge the green. Hand off a repair that holds.</text>
+  <rect x="752" y="108" width="330" height="52" rx="12" fill="#f2bcc7" fill-opacity=".08" stroke="#e6a3b5" stroke-opacity=".25"/>
+  <rect x="752" y="177" width="330" height="52" rx="12" fill="#f2bcc7" fill-opacity=".08" stroke="#e6a3b5" stroke-opacity=".25"/>
+  <rect x="752" y="246" width="330" height="52" rx="12" fill="#f2bcc7" fill-opacity=".08" stroke="#e6a3b5" stroke-opacity=".25"/>
+  <circle cx="782" cy="134" r="7" fill="#efa2b1"/><circle cx="782" cy="203" r="7" fill="#efa2b1"/><circle cx="782" cy="272" r="7" fill="#efa2b1"/>
+  <path d="M782 141v55M782 210v55" stroke="#efa2b1" stroke-opacity=".6" stroke-width="2"/>
+  <text x="804" y="141" fill="#f5e9ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">Signal</text>
+  <text x="804" y="210" fill="#f5e9ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">Cause</text>
+  <text x="804" y="279" fill="#f5e9ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">Closure</text>
+</svg>
