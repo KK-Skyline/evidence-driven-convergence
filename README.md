@@ -12,7 +12,8 @@
   <a href="#what-it-does">What it does</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#optional-jev-screen">Jev screen</a> ·
-  <a href="#evidence-and-limits">Evidence</a>
+  <a href="#evidence-and-limits">Evidence</a> ·
+  <a href="#credits">Credits</a>
 </p>
 
 > **For the moment between review and repair.** This Agent Skill helps a reviewer check whether a proposed fix addresses the cause, explains why earlier checks missed it, covers affected paths, and has an acceptance test that a superficial patch would fail.
@@ -86,5 +87,9 @@ tests/                         Standard-library adapter tests
 ```
 
 For questions or improvements, open an [issue](https://github.com/KK-Skyline/evidence-driven-convergence/issues). A useful report includes the contract, an anonymized proposed repair, the result the screen missed or misclassified, and what later review or tests established. Keep private code and credentials out of public issues.
+
+## Credits
+
+**Project direction and maintenance:** [KK-Skyline](https://github.com/KK-Skyline). **Skill writing, implementation, tests, and documentation assistance:** OpenAI Codex (AI assistant), working with KK-Skyline's requirements and review. This credits AI assistance without implying that the assistant has a GitHub contributor account or owns the project's copyright.
 
 Released under the [MIT License](LICENSE).
