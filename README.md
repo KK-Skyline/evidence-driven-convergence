@@ -4,8 +4,12 @@
 
 <p align="center">
   <a href="https://github.com/KK-Skyline/evidence-driven-convergence/actions/workflows/checks.yml"><img alt="Checks" src="https://github.com/KK-Skyline/evidence-driven-convergence/actions/workflows/checks.yml/badge.svg"></a>
-  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-7b4768"></a>
+  <a href="LICENSE"><img alt="Apache 2.0 License" src="https://img.shields.io/badge/license-Apache--2.0-7b4768"></a>
   <img alt="Python 3.10 or later" src="https://img.shields.io/badge/Python-3.10%2B-303849">
+</p>
+
+<p align="center">
+  Created by <a href="https://github.com/KK-Skyline">KK-Skyline</a> with OpenAI Codex (AI assistant)
 </p>
 
 <p align="center">
@@ -13,7 +17,8 @@
   <a href="#get-started">Get started</a> ·
   <a href="#optional-jev-screen">Jev screen</a> ·
   <a href="#evidence-and-limits">Evidence</a> ·
-  <a href="#credits">Credits</a>
+  <a href="#credits">Credits</a> ·
+  <a href="#license">License</a>
 </p>
 
 > **For the moment between review and repair.** This Agent Skill helps a reviewer check whether a proposed fix addresses the cause, explains why earlier checks missed it, covers affected paths, and has an acceptance test that a superficial patch would fail.
@@ -92,4 +97,8 @@ For questions or improvements, open an [issue](https://github.com/KK-Skyline/evi
 
 **Project direction and maintenance:** [KK-Skyline](https://github.com/KK-Skyline). **Skill writing, implementation, tests, and documentation assistance:** OpenAI Codex (AI assistant), working with KK-Skyline's requirements and review. This credits AI assistance without implying that the assistant has a GitHub contributor account or owns the project's copyright.
 
-Released under the [MIT License](LICENSE).
+## License
+
+Released under the [Apache License 2.0](LICENSE). Commercial use is allowed; redistribution requires the license and applicable attribution notices, including the [NOTICE](NOTICE) file. The license does not require users to report commercial use.
+
+Revisions through [96dc930](https://github.com/KK-Skyline/evidence-driven-convergence/commit/96dc930) were published under the [MIT License](https://github.com/KK-Skyline/evidence-driven-convergence/blob/96dc930/LICENSE); changing the current license does not withdraw that earlier grant.
