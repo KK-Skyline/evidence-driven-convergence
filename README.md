@@ -17,6 +17,7 @@
   <a href="#get-started">Get started</a> ·
   <a href="#optional-jev-screen">Jev screen</a> ·
   <a href="#evidence-and-limits">Evidence</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
   <a href="#credits">Credits</a> ·
   <a href="#license">License</a>
 </p>
@@ -30,6 +31,8 @@
 | Follow the real entry point through shared decisions, callers, state, and consumers. | Ask which plausible incorrect implementation could pass the current checks. | Give Coding the code cause, the escape cause, affected paths, repair direction, and falsifiable acceptance criteria. |
 
 The [skill instructions](SKILL.md) fit inside the existing coding and review loop. Reviewers keep the final judgment. The optional Jev screen highlights possible holes in a **written repair plan**; it does not approve code or issue a validation result.
+
+The review now routes each material finding by its evidence state: resolve an unclear contract, run a distinguishing check, diagnose an uncertain cause, hand off a causal plan, or verify closure. These are reviewer instructions, not an executable state-machine runtime.
 
 ```text
 Current goal and contract
@@ -65,7 +68,7 @@ python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 
 ## Optional Jev screen
 
-The screener asks five bounded questions about a proposed plan: cause evidence, escape analysis, affected paths, acceptance, and scope. Prepare a request **offline by default**:
+The screener asks five standing questions about a proposed plan: cause evidence, escape analysis, affected paths, acceptance, and scope. A packet may add up to 16 specific claims tied to evidence IDs. Prepare a request **offline by default**:
 
 ```bash
 python3 -B scripts/screen_plan.py assets/example-packet.json \
@@ -77,7 +80,7 @@ Inspect the generated request before sending any real project material. Live mod
 ## Evidence and limits
 
 - The local adapter has tests for offline behavior, packet integrity, malformed responses, replay binding, and advisory status. The [workflow badge](https://github.com/KK-Skyline/evidence-driven-convergence/actions/workflows/checks.yml) reports that repository test job only.
-- Small self-authored exercises showed that requirement-derived behavior checks can expose selected seeded faults and that a causal repair plan can reject a symptom-only fix. They are described, with limitations, in [provenance and evaluation](references/retrospective-and-cases.md).
+- Small self-authored exercises and adversarial review cases showed selected fault observations and protocol behavior. They are described, with limitations, in [provenance and evaluation](references/retrospective-and-cases.md). They do not establish a detection rate.
 - **Jev has not been evaluated here on live repair plans.** There is no measured claim that this skill reduces real-world rework, review time, or token cost. The [evaluation protocol](references/screening-evaluation.md) describes how to test those claims without treating an agent's agreement as ground truth.
 
 ## Project map
@@ -89,6 +92,7 @@ references/jev-screening.md    Optional Jev branch
 references/screening-evaluation.md  Future live evaluation
 scripts/screen_plan.py         Offline-first advisory CLI
 tests/                         Standard-library adapter tests
+CHANGELOG.md                    Dated changes and compatibility notes
 ```
 
 For questions or improvements, open an [issue](https://github.com/KK-Skyline/evidence-driven-convergence/issues). A useful report includes the contract, an anonymized proposed repair, the result the screen missed or misclassified, and what later review or tests established. Keep private code and credentials out of public issues.

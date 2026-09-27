@@ -4,6 +4,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import stat
 import subprocess
 import sys
 import tempfile
@@ -11,6 +12,7 @@ import unittest
 from unittest.mock import patch
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts/screen_plan.py"
+EXAMPLE = SCRIPT.parents[1] / "assets/example-packet.json"
 spec = importlib.util.spec_from_file_location("screen_plan", SCRIPT)
 s = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(s)
@@ -35,6 +37,13 @@ def replay(p, r):
 
 
 class ScreeningTests(unittest.TestCase):
+    def test_existing_example_packet_stays_compatible(self):
+        old_packet = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+        self.assertNotIn("claims", old_packet)
+        request = s.request_for(old_packet, "test-model")
+        self.assertEqual(set(request["questions"]), set(s.FOCI))
+        self.assertEqual(s.screen(old_packet, "test-model")["status"], "prepared_not_evaluated")
+
     def test_prepare_does_not_call_provider(self):
         with patch.object(s, "call_api", side_effect=AssertionError("network forbidden")):
             result = s.screen(packet(), "test-model")
@@ -147,6 +156,7 @@ class ScreeningTests(unittest.TestCase):
             self.assertEqual(first.returncode, 0, first.stderr)
             raw = (p / "result.json").read_bytes()
             self.assertEqual(json.loads(raw)["status"], "prepared_not_evaluated")
+            self.assertEqual(stat.S_IMODE((p / "result.json").stat().st_mode), 0o600)
             second = subprocess.run(argv, capture_output=True, text=True)
             self.assertNotEqual(second.returncode, 0)
             self.assertEqual((p / "result.json").read_bytes(), raw)

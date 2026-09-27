@@ -7,6 +7,21 @@ description: Pre-review assurance for coding changes, and root-cause repair plan
 
 Apply before a substantive review and when converting findings into repairs. Strengthen the existing coding-review loop; preserve its roles and approval boundaries. This skill provides decision guidance, not automatic enforcement or a reliability guarantee. A review request authorizes investigation, not implementation.
 
+## Evidence-based routing
+
+Track each material claim or finding in the existing review record. Keep its authority, observed evidence, inference, affected paths, and current disposition visible. Route from the evidence actually obtained:
+
+| Evidence state | Next action |
+| --- | --- |
+| Requirement or affected path unclear | Resolve authority or inspect the path; do not treat an assumption as a finding. |
+| Expected result or observation missing | Run a distinguishing check if authorized, or report the gap. Never invent RED. |
+| Defect confirmed, cause or shared exposure uncertain | Diagnose the mechanism and its escape; do not prescribe a speculative repair. |
+| Cause and affected paths established | Issue a falsifiable repair plan. If implementation is authorized, repair and re-review; otherwise hand off. |
+| Repair checked on original case but confirmed sibling or failure boundary remains | Return to cause and acceptance analysis. |
+| Required checks passed on the tested files, with residual gaps disclosed | Close the finding within the authorized review scope. |
+
+No-finding and out-of-scope outcomes may end the review with inspected scope and limitations. These routes guide the reviewer; prose alone does not enforce a state machine. Keep the evidence judgment separate from the routing decision. For optional Jev screening, use [jev-screening.md](references/jev-screening.md); its labels can direct attention, never close a finding or authorize implementation.
+
 ## 1. Establish the review boundary
 
 Inspect the actual change, relevant project authority, tested checkout and dirty-file state. Identify claimed behavior, real entry points, direct callers, state owners, and downstream consumers.
@@ -51,7 +66,7 @@ An uncertain cause calls for a bounded diagnostic experiment with a discriminati
 
 **Done when:** every actionable finding has a causal repair plan and falsifiable acceptance criteria, or is explicitly an investigation. “Fix this case and add a test” is insufficient.
 
-When Jev-assisted handoff screening is requested, read [jev-screening.md](references/jev-screening.md) before sending the plan to Coding. This optional advisory check does not replace this review or add an approval role; without Jev access, continue the existing review and record screening as unavailable.
+When Jev-assisted handoff screening is requested, read [jev-screening.md](references/jev-screening.md) before sending the plan to Coding. For a disputed material claim, bind the question to cited evidence IDs so an alert points to a checkable assertion. This optional advisory check does not replace this review or add an approval role; without Jev access, continue the existing review and record screening as unavailable.
 
 ## 4. Verify closure inside the existing review
 

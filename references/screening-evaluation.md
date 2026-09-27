@@ -11,7 +11,7 @@ Have a reviewer label plan gaps from independent inspection and later results, n
 Keep one record per plan in an evaluation JSONL outside the packet:
 
 ```json
-{"case_id":"case-001","split":"development","packet_sha256":"digest from result","request_sha256":"digest from result","rubric_version":"repair-screen-v1","model":"actual returned model","mode":"live","result_path":"local receipt","labels":{"affected_paths":"gap"},"label_evidence":["test or source reference"],"downstream":{"same_cause_reopened":null,"regression_introduced":null,"repair_batches":null},"review_seconds":null,"provider_input_tokens":null,"provider_output_tokens":null}
+{"case_id":"case-001","split":"development","packet_sha256":"digest from result","request_sha256":"digest from result","rubric_version":"repair-screen-v2","model":"actual returned model","mode":"live","result_path":"local receipt","labels":{"affected_paths":"gap"},"label_evidence":["test or source reference"],"downstream":{"same_cause_reopened":null,"regression_introduced":null,"repair_batches":null},"review_seconds":null,"provider_input_tokens":null,"provider_output_tokens":null}
 ```
 
 Null means unavailable, not zero. Use actual receipt usage; include failed or unavailable requests separately. In a future comparison with advice enabled, include screening, reading, verification and extra coordination in total cost, not just Jev request cost.
